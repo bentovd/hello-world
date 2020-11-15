@@ -1,0 +1,20 @@
+.grid-container{
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto auto auto;
+}
+.item1{
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 1;
+    background-color: blueviolet;
+}
+.picture1{
+    grid-column: 3 / span 1;
+    grid-row: 2 / span 2;
+    background-color: rgb(163, 103, 219);
+}
+.main1{
+    grid-column: 2 / span 2;
+    grid-row: 1 / span 2;
+    background-color: rgb(141, 40, 236);
+}
