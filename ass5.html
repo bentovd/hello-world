@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>changing elements</title>
+        <script> function addingText(){document.getElementById("e1").innerHTML="i add elemrnt 1" }</script>
+    </head>
+    <body>
+        <p id="e1"></p>
+        <p id="e2"></p>
+        <script>addingText()</script>
+        <script> function changeCol(){document.getElementById("e2").style.backgroundColor="red"} </script>
+        <script> document.getElementById("e2").innerHTML="create element 2"</script>
+        <script> function changeText(){document.getElementById("e1").innerHTML="i change text of elememt 1"} </script>
+
+        <button type="button" onclick= "changeCol()">changing colors</button>
+        <button type="button" onclick= "changeText()">changing text</button>
+    </body>
+</html>
