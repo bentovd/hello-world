@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>assignment8</title>
+</head>
+<body>
+{% if session.get('name') %}
+<p> welcome {{session.get('name')}}!</p>
+{% endif %}
+
+{%include ("main.html")%}
+ <h2 style="font-family: 'Consolas', 'Monaco', 'Bitstream Vera Sans Mono', monospace"> this is {{name | default("my",true)}} hobbies:</h2>
+ <ul>
+{% if my_hobbies | length > 0 %}
+     {%for h in my_hobbies%}
+        <li style="color: darkslategrey; font-family: 'Adobe Myungjo Std M'"> {{h}} </li>
+     {%endfor%}
+ {% else %}
+     <p>there is no hobbies :</p>
+ {% endif%}
+ </ul>
+<p style="color: dodgerblue; font-family: 'Adobe Pi Std'"> go to cv:</p> <br>
+
+{%block B%}
+ <p>~~~~~</p>
+{% endblock %}
+</body>
+</html>

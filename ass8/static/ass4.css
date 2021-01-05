@@ -1,0 +1,22 @@
+.grid-container{
+    display: grid;
+    grid-template-columns: 33vw 33vw 33vw;
+    grid-template-rows: 33vh 33vh 33vh;
+    height: 100vh;
+    width: 100vw;
+}
+.item1{
+    grid-column: 1 / span 2;
+    grid-row: 1 / span 1;
+    background-color: blueviolet;
+}
+.picture1{
+    grid-column: 3 / span 1;
+    grid-row: 2 / span 2;
+    background-color: rgb(163, 103, 219);
+}
+.main1{
+    grid-column: 2 / span 2;
+    grid-row: 1 / span 2;
+    background-color: rgb(141, 40, 236);
+}
