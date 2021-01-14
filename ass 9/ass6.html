@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <header>
+        <title>
+            final CV 
+        </title>
+        <link rel="stylesheet" href="{{url_for('static',filename='ass6.css')}}">
+        <script src="{{url_for('static',filename='ass6.js')}}"></script>
+    </header>
+    <body>
+    {% if session.get('name') %}
+<p> welcome {{session.get('name')}}!</p>
+{% endif %}
+        <div class="grid-container" >
+            <div class="main1" style="font-family:fantasy;">
+                <h1 style="font-family:monospace">danielle's bentov cv </h1>
+                <h3>habits</h3>
+                <ul>
+                    <li>coocking</li>
+                    <li>singing</li>
+                    <li>play games</li>
+                    <li>drinking</li>
+                    <li>watch tv  </li>
+                </ul>
+            </div>
+            <div class="picture1"><img id="danielle" onmouseover="big()" onmouseout="regular()" src="{{url_for('static',filename='profile.jpeg')}}" alt="no image" style="width: 26vw;height:80vh; padding: 4vh 2.2vw;">  </div>
+            <div class="contact1"> 
+                <h2 style="font-family: sans-serif;">create contact </h2>
+                <label for="First Name">First Name </label>
+                    <input type = "text" id = "First Name" name = "FirstName">
+                    <label for="Last Name">Last Name </label>
+                    <input type = "text" id = "Last Name" name = "LastName">
+                    <label for="Phone Number" style = "display:block; padding: 10px 0;">Phone Number </label>
+                    <input type = "text" id = "Phone Number" name = "PhoneNumber">
+                    <label for="Email" style = "display:inline; padding: 10px 0;">E-mail </label>
+                    <input type = "text" id = "Email" name = "Email">
+                    <label for="Request" style = "display:block; padding: 15px 0;">Request </label>
+                    <input type = "text" id = "Request" name = "Request" style = "width: 45%; height: 20px;">
+                    <label for="SEND" style = "display:block; padding: 10px 0;"></label>
+                    <input type = "Button" value = "SEND" id = "SEND" name = "SEND"> 
+                    <a href="{{url_for('static',filename='CVFILE.docx')}}">
+                        <img src="{{url_for('static',filename='CVPIC.JPG')}}" alt="no file now" style="margin-left: 70px;" width="84" height="72"></a>
+                    <a href="https://www.facebook.com/daniel.bentov.3">facebook profile</a> <br>
+                    <a href="{{ url_for('userList') }}" target="_blank">users list </a>
+            </div>
+
+
+        </div>
+    </body>
+</html>

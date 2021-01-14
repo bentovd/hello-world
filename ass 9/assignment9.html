@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ass9</title>
+</head>
+<body>
+{% if session.get('name') %}
+<p> welcome {{session.get('name')}}!</p>
+{% endif %}
+
+<h1 style="font-family: 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', 'Verdana', sans-serif"> search form:</h1>
+    <form action="/assignment9" method="GET">
+         <label for="First_name" style="font-size: 16px;"> First name</label>
+         <input name="First_name" id="First_name">
+         <label for="Last_name" style="font-size: 16px;"> Last name</label>
+         <input name="Last_name" id="Last_name">
+         <label for="Email" style="font-size: 16px;"> E-mail</label>
+         <input name="Email" id="Email">
+        <input type="submit">
+    </form>
+    {%if Nname==None and Pword==None%}
+    <h3> Registration form: </h3>
+        <form action="/assignment9" method="POST">
+             <label style="font-size: 16px;"> nickname</label>
+             <input name='N' >
+              <label style="font-size: 16px;"> password</label>
+             <input name='P' >
+            <input type="submit">
+        </form>
+    {%endif%}
+    {%if Nname!=None and Pword !=None%}
+    <p> welcom {{Nname | default("Guest", true)}}</p>
+    {%endif%}
+
+    <div>
+        {%for user in users%}
+        {% if user["First_name"] == Fname and user["Last_name"] == Lname and user["Email"] == Email%}
+                <p style="font-family: 'Ubuntu', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', 'Verdana', sans-serif"> the user you searched is: {{Fname}} {{Lname}} {{Email}}</p>
+            {%else%} <p></p>
+            {%endif%}
+         {%endfor%}
+
+        {% if  Fname== '' and Lname=='' and Email=='' %}
+        <p> the users are: </p>
+            {%for user in users%}
+                <p style="font-family: 'Ubuntu', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', 'Verdana', sans-serif">  {{user["First_name"]}} {{user["Last_name"]}} {{user["Email"]}}</p>
+            {%endfor%}
+        {%endif%}
+        <a href="/LogOut"><button> Log out</button></a>
+    </div>
+</body>
+</html>
